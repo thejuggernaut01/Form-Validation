@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: purple;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    /* background: white; */
+    border-radius: 10px;
+
+}
+
+.container .forms--container {
+    display: flex;
+    align-items: center;
+    width: 200%;
+    height: 340px;
+    transition: height 0.2s ease;
+}
+
+.container .form {
+    width: 50%;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    transition: margin-left 0.8s ease;
+}
+
+.container.form--active .login {
+    margin-left: -50%;
+    opacity: 0;
+    transform: margin-left 0.8s ease, opacity 0.9s ease;
+}
+
+.container .signUp {
+    opacity: 0;
+    transition: margin-right 0.8s ease, opacity 0.8s ease
+}
+
+.container.form--active .signUp {
+    margin-right: -50%;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+/* @keyframes fadeIn {
+    0% {
+        opacity: 1;
+        margin-left: 0%;
+    }
+
+    50% {
+        opacity: 0.5s;
+    }
+
+    100% {
+        opacity: 0;
+        margin-left: -50%;
+    }
+} */
+
+/* .container.form--active .login {
+    margin-left: -50%;
+    opacity: 0;
+    transform: margin-left 0.8s ease, opacity 0.9s ease;
+
+}
+
+.container .signUp {
+    opacity: 0;
+    transform: opacity 0.9s ease;
+}
+
+.container.form--active .signUp {
+    opacity: 1;
+}
+
+.container.form--active .signUp {
+    margin-right: -50%;
+} */
+
+/* .container.form--active .forms--container {
+    height: 480px;
+} */
+
+.container .form .title {
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.form .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: purple;
+    border-radius: 25px;
+}
+
+.form .input--field {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 30px;
+}
+
+.input--field input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0 35px;
+    border-bottom: 2px solid #999;
+    border-top: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.input--field input:is(:focus, :valid) {
+    /* transition: 1.3s; */
+    border-bottom-color: purple;
+}
+
+.input--field i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 23px;
+    color: #999;
+    transition: all 0.3s ease-in-out;
+}
+
+.input--field input:is(:focus)~i {
+    color: purple;
+}
+
+.input--field i.icon {
+    left: 0;
+}
+
+.input--field i.showHidePw {
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.form .button {
+    margin-top: 40px;
+}
+
+.form .button input {
+    border: none;
+    background: rgb(197, 108, 197);
+    color: #fff;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.form .button input:hover {
+    background: purple;
+    transition: all 0.3s ease-in;
+
+}
+
+.form .login--signUp {
+    padding: 30px;
+    text-align: center;
+    /* font-size: 14px; */
+}
+
+.form a {
+    text-decoration: none;
+    color: purple;
+}
+
+.form a:hover {
+    text-decoration: underline;
+}
+
+.login-form #email_error,
+.login-form #pass_error {
+    margin-top: 5px;
+    width: 370px;
+    font-size: 18px;
+    color: #C62828;
+    background: rgba(255, 0, 0, 0.1);
+    text-align: center;
+    padding: 5px 8px;
+    border-radius: 3px;
+    border: 1px solid #EF9A9A;
+    display: none;
+}
+
+.signUp--form #passwordError,
+#emailError,
+#nameError,
+#confirmPWError {
+    margin-top: 5px;
+    width: 370px;
+    font-size: 16px;
+    color: #731c1c;
+    background: rgb(192, 114, 114);
+    text-align: center;
+    padding: 7px 9px;
+    border: 1px solid #EF9A9A;
+    border-radius: 15px 0 15px;
+    display: none;
+}

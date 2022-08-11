@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <title>Login & Registration Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms--container">
+        <!-- Login Registration -->
+        <div class="form login">
+          <h1 class="title">Login</h1>
+
+          <form action="#" id="form-login" onsubmit="checkFunction()">
+            <div class="input--field">
+              <input
+                type="email"
+                name="email"
+                id="logEmail"
+                placeholder="Enter your email"
+                required
+              />
+              <i class="fa-regular fa-envelope icon"></i>
+            </div>
+            <div id="logEmailError"></div>
+
+            <div class="input--field">
+              <input
+                type="password"
+                name="password"
+                id="logPass"
+                class="password"
+                placeholder="Enter your password"
+                required
+              />
+              <i class="fa-solid fa-lock icon"></i>
+              <i class="fa-regular fa-eye-slash showHidePw"></i>
+            </div>
+            <div id="logPassError"></div>
+
+            <div class="input--field button">
+              <input
+                type="submit"
+                onclick="checkFunction()"
+                class="signIn"
+                value="Sign In"
+              />
+            </div>
+
+            <div class="login--signUp">
+              <span class="text">Haven't Registered?</span>
+              <a href="#" class="text signUp-link">Register Now</a>
+            </div>
+          </form>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="form signUp">
+          <h1 class="title">Registration</h1>
+
+          <form action="#" class="signUp--form">
+            <div class="input--field">
+              <input
+                type="text"
+                placeholder="Enter your name"
+                class="regName"
+                id="name"
+                name="name"
+                required
+                onblur="validate(this)"
+              />
+              <i class="fa-regular fa-user"></i>
+            </div>
+            <div id="nameError"></div>
+
+            <div class="input--field">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="regMail"
+                name="email"
+                id="email"
+                required
+                onblur="validate(this)"
+              />
+              <i class="fa-regular fa-envelope icon"></i>
+            </div>
+            <div id="emailError"></div>
+
+            <div class="input--field">
+              <input
+                type="password"
+                onblur="validate(this)"
+                placeholder="Create your password"
+                class="password regPw1"
+                id="password"
+                name="password"
+                required
+              />
+              <i class="fa-solid fa-lock icon"></i>
+            </div>
+            <div id="passwordError"></div>
+
+            <div class="input--field">
+              <input
+                type="password"
+                placeholder="Confirm your password"
+                id="confirmPW"
+                class="password regPw2"
+                name="password"
+                required
+                onblur="validate(this)"
+              />
+              <i class="fa-solid fa-lock icon"></i>
+              <i class="fa-regular fa-eye-slash showHidePw"></i>
+            </div>
+            <div id="confirmPWError"></div>
+
+            <div class="input--field button">
+              <input
+                type="submit"
+                class="signUP"
+                onclick="registerAccount()"
+                value="Create New Account"
+              />
+            </div>
+
+            <div class="login--signUp">
+              <span class="text">Registered Already?</span>
+              <a href="#" class="text login-link">Sign In</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script
+      src="https://kit.fontawesome.com/02c374cd64.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
